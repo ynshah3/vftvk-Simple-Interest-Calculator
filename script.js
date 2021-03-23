@@ -1,20 +1,31 @@
 function compute()
 {
     p = parseInt(document.getElementById("principal").value);
-    r = parseInt(document.getElementById("rate").value);
-    y = parseInt(document.getElementById("years").value);
-    document.getElementById("r1").innerHTML = p;
-    document.getElementById("r2").innerHTML = (r * 0.21) + "%";
-    document.getElementById("r4").innerHTML = 2020 + y;
 
-    result = (p * y * r * 0.21)/100
+    if (p <= 0 || isNaN(p)) {
+      alert("Principal should be a positive value!");
+      document.getElementById("principal").focus();
+    }
+    else {
+      r = parseFloat(document.getElementById("rate-value").value);
+      y = parseInt(document.getElementById("years").value);
+      document.getElementById("r1").innerHTML = p;
+      document.getElementById("r2").innerHTML = r + "%";
+      document.getElementById("r4").innerHTML = 2020 + y;
 
-    document.getElementById("r3").innerHTML = result;
+      result = (p * y * r)/100
 
-    document.getElementById("result").style.display = "inline-block";
+      document.getElementById("r3").innerHTML = result;
+
+      document.getElementById("result").style.display = "inline-block";
+    }
 }
 
-function updateValue(value) {
-  document.getElementById("rate-value").innerHTML = value * 0.21 + "%";
+function updateNumber(value) {
+  document.getElementById("rate-value").value = value * 0.2;
+}
+
+function updateSlider(value) {
+  document.getElementById("rate").value = value / 0.2;
 }
         

@@ -1,4 +1,5 @@
 body {
+  background-color: black;
   font-family: Helvetica, Arial, sans-serif;
   line-height: 2;
   position: relative;
@@ -20,4 +21,27 @@ h1{
   display: none;
   margin-top: 10px;
   line-height: 1;
+}
+
+#principal, #rate, #years {
+  position: absolute;
+  left: 200px;
+}
+
+#rate-value {
+  position: absolute;
+  left: 350px;
+}
+
+.left {
+  position: absolute;
+  left: 410px;
+}
+
+.main {
+  padding: 30px;
+  padding-right: 50px;
+  background-color: white;
+  border-radius: 20px;
+  display: inline-block;
 }
