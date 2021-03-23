@@ -6,11 +6,20 @@
     <body>
         <h1>Simple Interest Calculator</h1>
 
-        Amount <input type="number"  id="principal">  <br/>
-        Rate <input type="number"  id="rate">  <br/>
-        No. of Years <input type="number"  id="years">  <br/>
-        Interest : <span id="result"></span><br>
+        <div class="indent">
+          Amount <input type="number" name="principal" id="principal"><br>
+          Interest Rate <input type="range" name="rate" id="rate" oninput="updateValue(this.value)"><span id="rate-value">10.5%</span><br>
+          No. of Years <input type="number" name="years" id="years" min="1" max="50"><br>
+          
+          <button onclick="compute()">Compute Interest</button><br>
+          <span id="result">
+            If you deposit <span id="r1"></span>,<br>
+            at an interest rate of <span id="r2"></span>.<br>
+            You will receive an amount of <span id="r3"></span>,<br>
+            in the year <span id="r4"></span>
+          </span><br>
+        </div>
 
-        <button onclick="compute()">Compute</button>
+        (C) Everyone Can Get Rich
     </body>
 </html>
